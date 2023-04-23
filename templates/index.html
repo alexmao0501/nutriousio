@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class='Content'>
+    <h1 style = 'text-align: center'>Nutrious.io</h1>
+    {% if foods|length < 1 %}
+    <h4 style = 'text-align: center'>There are no foods recorded. Add one below!</h4>
+    {% else %}
+    <Table>
+        <tr>
+            <th>Item</th>
+            <th>Added</th>
+            <th>Calories</th>
+            <th>Actions</th>
+        </tr>
+        {% for food in foods %}
+            <tr>
+                <td>{{ food.content }}</td>
+                <td>{{ food.date_created.date() }}</td>
+                <td>{{ food.calories }}</td>
+                <td>
+                    <a href="/delete/{{food.id}}">Delete</a>
+                    <br>
+                    <a href="/update/{{food.id}}">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </Table>
+    {% endif %}
+
+    <div class = 'form'>
+        <form action = '/' method = 'POST'>
+            <input type = 'text' name = 'content' id = 'content'>
+            <input type = 'submit' value = 'Add Food'>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+virtualenv
+Flask
+pymongo
+certifi
+flask_cors
+bcrypt
+
+# usda
+requests
+pyprojroot
+pyYAML

@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+.selectButton {
+  color: #fff;
+  background-color: #285340;
+  border-color: #285340;
+}
+
+.selectButton:hover {
+  color: #fff;
+  background-color: #285340;
+  border-color: #285430;
+}
